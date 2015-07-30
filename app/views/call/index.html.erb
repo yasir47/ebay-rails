@@ -1,0 +1,32 @@
+<%= form_for :call do |f| %>
+<%= f.text_field :search %>
+<%= f.submit %>
+ <% end %>
+
+
+
+
+
+<% a=0 %>
+
+<% if !@items.nil? %>
+<ul>
+  <%   @items.each do |f| %>
+     <div>
+      <% # "Item Id = #{f['itemId'][0]}" %>
+       <h1><%= "Title = #{f['title'][0]} "%></h1>
+       <p><%= image_tag f['galleryURL'][0] %><%#  "galleryUrl = #{f['galleryURL'][0]}"%></p>
+       <p><%=  "Link = #{f['viewItemURL'][0]}"%></p>
+       <p><%=  "price = #{f['sellingStatus'][0]['currentPrice'][0]['__value__']} #{f['sellingStatus'][0]['currentPrice'][0]['@currencyId']}  "%></p>
+
+     <p>=============================================================</p>
+     </div>
+
+
+   <% a+=1 %>
+
+<% end %>
+  <%= will_paginate @items %>
+
+    </ul>
+<% end %>

@@ -1,0 +1,1 @@
+Ebay::APPID = 'testing15-f697-4f0f-adee-521a9ffee31'
